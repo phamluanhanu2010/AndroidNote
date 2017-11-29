@@ -1,0 +1,38 @@
+03-23 10:37:36.541 31976-31976/com.vitc.mcare.monitor D/iabv3: resultCode = -1, responseCode = 0
+03-23 10:37:36.582 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.toString: com.mobile.mcare.monitor.sms099 purchased at Thu Mar 23 10:37:31 GMT+07:00 2017(GPA.3315-8475-1978-74023). Token: jodkjoogcnjcnbjmafhijdob.AO-J1Ow-jO5xkNYmqB5seYe0nHu9eoiFgXVBwrY2kgn4hV8kza_inBb9ghaPrd6sYgavEBLFdFTpVzEJCXmH3D7gaSsFhybt3yFrrEH_Yu9rAVR2iHwet8GA-kZ9jxrchQSLknbp7jbkFL-Ojof5hRXWMQ6Ipo7fNA, Signature: F4d1PrMWcK9oe7f62fM43yq/pEMgg7/P3PmJfiOIye58YFc/VNyueWu7dr+AD+YG+pbqOBedurDTGQlvMV7QpT0PzSb/DSHyfQLczSTwQlasXZ2S9Wi5yPgiC+JwvmQirrl16qMqspeZOJNn5TSKx/6RHR+hLFB5GKpl+lbklIRmbi+/jN6cBJuduYhsFRyENwf202HAl6BLzLvsJt6c1N/Cg7t2Bzunmsw6oXnghXedYlzFolw01E8/wz9X/5FOCmbG+bFlrEffQDAWQ+E2uu9akySCzr85fjsEqoFqyOT2Xh6KbPf3j/4I/Fxo1dKFx5lRwG+qBwi4QJXiyNWgnQ==
+03-23 10:37:36.585 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.orderId: GPA.3315-8475-1978-74023
+03-23 10:37:36.585 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.productId: com.mobile.mcare.monitor.sms099
+03-23 10:37:36.585 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.purchaseToken: jodkjoogcnjcnbjmafhijdob.AO-J1Ow-jO5xkNYmqB5seYe0nHu9eoiFgXVBwrY2kgn4hV8kza_inBb9ghaPrd6sYgavEBLFdFTpVzEJCXmH3D7gaSsFhybt3yFrrEH_Yu9rAVR2iHwet8GA-kZ9jxrchQSLknbp7jbkFL-Ojof5hRXWMQ6Ipo7fNA
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.purchaseTime: Thu Mar 23 10:37:31 GMT+07:00 2017
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.purchaseState.toString: PurchasedSuccessfully
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.signature: F4d1PrMWcK9oe7f62fM43yq/pEMgg7/P3PmJfiOIye58YFc/VNyueWu7dr+AD+YG+pbqOBedurDTGQlvMV7QpT0PzSb/DSHyfQLczSTwQlasXZ2S9Wi5yPgiC+JwvmQirrl16qMqspeZOJNn5TSKx/6RHR+hLFB5GKpl+lbklIRmbi+/jN6cBJuduYhsFRyENwf202HAl6BLzLvsJt6c1N/Cg7t2Bzunmsw6oXnghXedYlzFolw01E8/wz9X/5FOCmbG+bFlrEffQDAWQ+E2uu9akySCzr85fjsEqoFqyOT2Xh6KbPf3j/4I/Fxo1dKFx5lRwG+qBwi4QJXiyNWgnQ==
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.responseData.toString: {"orderId":"GPA.3315-8475-1978-74023","packageName":"com.vitc.mcare.monitor","productId":"com.mobile.mcare.monitor.sms099","purchaseTime":1490240251172,"purchaseState":0,"developerPayload":"inapp:com.mobile.mcare.monitor.sms099:e38460a5-bd82-4d8e-a572-96a9f27b9f9d","purchaseToken":"jodkjoogcnjcnbjmafhijdob.AO-J1Ow-jO5xkNYmqB5seYe0nHu9eoiFgXVBwrY2kgn4hV8kza_inBb9ghaPrd6sYgavEBLFdFTpVzEJCXmH3D7gaSsFhybt3yFrrEH_Yu9rAVR2iHwet8GA-kZ9jxrchQSLknbp7jbkFL-Ojof5hRXWMQ6Ipo7fNA"}
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.toString: com.anjlab.android.iab.v3.PurchaseInfo@d07c7bf
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.responseData: {"orderId":"GPA.3315-8475-1978-74023","packageName":"com.vitc.mcare.monitor","productId":"com.mobile.mcare.monitor.sms099","purchaseTime":1490240251172,"purchaseState":0,"developerPayload":"inapp:com.mobile.mcare.monitor.sms099:e38460a5-bd82-4d8e-a572-96a9f27b9f9d","purchaseToken":"jodkjoogcnjcnbjmafhijdob.AO-J1Ow-jO5xkNYmqB5seYe0nHu9eoiFgXVBwrY2kgn4hV8kza_inBb9ghaPrd6sYgavEBLFdFTpVzEJCXmH3D7gaSsFhybt3yFrrEH_Yu9rAVR2iHwet8GA-kZ9jxrchQSLknbp7jbkFL-Ojof5hRXWMQ6Ipo7fNA"}
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: details.purchaseInfo.purchaseData.toString: com.anjlab.android.iab.v3.PurchaseData@7e66e8c
+03-23 10:37:36.586 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency: orderId: GPA.3315-8475-1978-74023
+03-23 10:37:36.587 31976-31976/com.vitc.mcare.monitor I/AddPhoneEmergency:  purchaseTime: 1490240251172--packageName: com.vitc.mcare.monitor--purchaseToken: jodkjoogcnjcnbjmafhijdob.AO-J1Ow-jO5xkNYmqB5seYe0nHu9eoiFgXVBwrY2kgn4hV8kza_inBb9ghaPrd6sYgavEBLFdFTpVzEJCXmH3D7gaSsFhybt3yFrrEH_Yu9rAVR2iHwet8GA-kZ9jxrchQSLknbp7jbkFL-Ojof5hRXWMQ6Ipo7fNA --productID: com.mobile.mcare.monitor.sms099
+
+
+
+
+
+		Log.i(TAG, "details.toString: " +  details.toString());
+
+        Log.i(TAG, "details.purchaseInfo.purchaseData.orderId: " +  details.purchaseInfo.purchaseData.orderId);
+
+        Log.i(TAG, "details.purchaseInfo.purchaseData.productId: " +  details.purchaseInfo.purchaseData.productId);
+        Log.i(TAG, "details.purchaseInfo.purchaseData.purchaseToken: " +  details.purchaseInfo.purchaseData.purchaseToken);
+        Log.i(TAG, "details.purchaseInfo.purchaseData.purchaseTime: " +  details.purchaseInfo.purchaseData.purchaseTime);
+        Log.i(TAG, "details.purchaseInfo.purchaseData.purchaseState.toString: " +  details.purchaseInfo.purchaseData.purchaseState.toString());
+
+
+        Log.i(TAG, "details.purchaseInfo.signature: " +  details.purchaseInfo.signature);
+        Log.i(TAG, "details.purchaseInfo.responseData.toString: " +  details.purchaseInfo.responseData.toString());
+
+        Log.i(TAG, "details.purchaseInfo.toString: " +  details.purchaseInfo.toString());
+        Log.i(TAG, "details.purchaseInfo.responseData: " +  responseData);
+        Log.i(TAG, "details.purchaseInfo.purchaseData.toString: " +  details.purchaseInfo.purchaseData.toString());
+        Log.i(TAG, "orderId: " +  details.orderId);
+		 Log.i(TAG, " purchaseTime: " + purchaseTime + "--packageName: " + packageName + "--purchaseToken: "
+                        + purchaseToken + " --productID: " + productID);

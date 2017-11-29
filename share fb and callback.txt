@@ -1,0 +1,47 @@
+private void share() {
+      CallbackManager  callbackManager = CallbackManager.Factory.create();
+       ShareDialog shareDialog = new ShareDialog(this);
+
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+
+            @Override
+            public void onSuccess(Sharer.Result result) {
+                AppBase.showLog("onSuccess");
+                AppBase.showLog("registerCallback: " + result.getPostId());
+
+                initShareMission();
+            }
+
+            @Override
+            public void onCancel() {
+                AppBase.showLog("onCancel");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                AppBase.showLog("onError");
+            }
+
+        });
+
+        if (ShareDialog.canShow(ShareLinkContent.class)) {
+            ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                    .setContentTitle("Hello Facebook")
+                    .setContentDescription(
+                            "The 'Hello Facebook' sample  showcases simple Facebook integration")
+                    .setContentUrl(Uri.parse("http://developers.facebook.com/android"))
+                    .build();
+
+            shareDialog.show(linkContent,ShareDialog.Mode.FEED);// phải thêm ShareDialog.Mode.FEED mới bât được callback
+        }
+    }
+
+và phải override:
+
+   @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+       
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+      
+    }

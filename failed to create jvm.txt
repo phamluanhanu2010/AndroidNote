@@ -1,0 +1,4 @@
+1. Check JAVA_HOME
+2.
+- Delete .gradle folder from c:\users\{username}\.gradle
+- Delete .AndroidStudio folder from c:\users\{username}\.AndroidStudio 

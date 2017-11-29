@@ -1,0 +1,11 @@
+
+-------------------------------GET SHA1 RELWASE-------------------------------------------------------------------
+Click on Build > Generate Signed APK.
+You will get a message box, just click OK.
+Now there will be another window just copy Key Store Path.
+Now open a command prompt and go to C:\Program Files\Java\jdk1.8.0_91\bin> (or any installed jdk version).
+Type keytool -list -v -keystore and then paste your Key Store Path (Eg. C:\Program Files\Java\jdk1.8.0_91\bin>keytool -list -v -keystore "E:\Project\Android\strategy.jks").
+Now it will Ask Key Store Password, provide yours and press Enter to get your SHA1 and MD5 Certificate keys.
+
+-------------------------------GET SHA1 DEBUG-------------------------------------------------------------------
+keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android

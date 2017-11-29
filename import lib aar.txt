@@ -1,0 +1,11 @@
+
+---------------------------------------------------------------------------------------------
+Import Lib file aar:
+Lets say you have kept aar file in libs folder. ( assume file name is VTCLogin-release.aar )
+
+then in app build.gradle specify following and click sync project with Gradle files.
+
+    compile 'com.strategy.intecom.vtc.vtclogin.login:VTCLogin-release@aar'
+	or 
+    compile(name:'VTCLogin-release', ext:'aar')
+---------------------------------------------------------------------------------------------	

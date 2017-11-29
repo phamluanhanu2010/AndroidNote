@@ -1,0 +1,51 @@
+=> <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+
+//For 3G check
+boolean is3g = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
+            .isConnectedOrConnecting();
+//For WiFi Check
+boolean isWifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+            .isConnectedOrConnecting();
+
+System.out.println(is3g + " net " + isWifi);
+
+if (!is3g && !isWifi) 
+{ 
+Toast.makeText(getApplicationContext(),"Please make sure your Network Connection is ON ",Toast.LENGTH_LONG).show();
+} 
+ else 
+{ 
+        " Your method what you want to do "
+} 
+-------------------------------------------------Check detail-------------------------------------------------------------------------------
+final ConnectivityManager connMgr = (ConnectivityManager)
+    this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+    final android.net.NetworkInfo wifi =
+    connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+    final android.net.NetworkInfo mobile =
+    connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+    if( wifi.isAvailable() && wifi.getDetailedState() == DetailedState.CONNECTED){
+        Toast.makeText(this, "Wifi" , Toast.LENGTH_LONG).show();
+    }
+    else if( mobile.isAvailable() && mobile.getDetailedState() == DetailedState.CONNECTED ){
+        Toast.makeText(this, "Mobile 3G " , Toast.LENGTH_LONG).show();
+    }
+    else
+    {   
+        Toast.makeText(this, "No Network " , Toast.LENGTH_LONG).show();
+    }
+-------------------------------------------------Check detail-------------------------------------------------------------------------------
+
+-------------------------------------------------Check show name-------------------------------------------------------------------------------
+ //test
+        final ConnectivityManager connMgr = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        String name = networkInfo.getTypeName();
+        Common.showLog("Name------" + name);
+        //test
+-------------------------------------------------Check show name-------------------------------------------------------------------------------

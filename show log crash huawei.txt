@@ -1,0 +1,8 @@
+Dial
+
+*#*#2846579#*#*
+and you will see a hidden menu. Go Project Menu / Background Setting / Log setting and define the log availability (log switch) and level (log level setting).
+
+And then make sure you restart your phone.
+
+Please note this probably only applies to Huawei phones.

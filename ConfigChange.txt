@@ -1,0 +1,10 @@
+set in activity:
+
+set screenOrientation
+android:screenOrientation="portrait"
+or
+ android:screenOrientation="landscape"
+
+
+save sate when rotate screen
+android:configChanges="keyboardHidden|orientation|screenSize"

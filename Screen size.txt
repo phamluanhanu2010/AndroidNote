@@ -1,0 +1,34 @@
+res/values/dimens.xml(default)
+res/values-ldpi/dimens.xml   (240x320 and nearer resolution)
+res/values-mdpi/dimens.xml   (320x480 and nearer resolution)
+res/values-hdpi/dimens.xml   (480x800, 540x960 and nearer resolution)
+res/values-xhdpi/dimens.xml  (720x1280 - Samsung S3, Micromax Canvas HD, etc) 
+res/values-xxhdpi/dimens.xml (1080x1920 - Samsung S4, HTC one, etc)
+res/values-large/dimens.xml  (480x800)
+
+res/values-large-mdpi/dimens.xml (600x1024)
+res/values-sw600dp/dimens.xml  (600x1024)
+res/values-sw720dp/dimens.xml  (800x1280)
+res/values-xlarge-xhdpi/dimens.xml (2560x1600 - Nexus 10")
+res/values-large-xhdpi/dimens.xml  (1200x1920 - Nexus 7"(latest))
+
+
+
+values-sw720dp          10.1” tablet 1280x800 mdpi
+
+values-sw600dp          7.0”  tablet 1024x600 mdpi
+
+values-sw480dp          5.4”  480x854 mdpi 
+values-sw480dp          5.1”  480x800 mdpi 
+
+values-xhdpi            4.7”   1280x720 xhdpi 
+values-xhdpi            4.65”  720x1280 xhdpi 
+
+values-hdpi             4.0” 480x800 hdpi
+values-hdpi             3.7” 480x854 hdpi
+
+values-mdpi             3.2” 320x480 mdpi
+
+values-ldpi             3.4” 240x432 ldpi
+values-ldpi             3.3” 240x400 ldpi
+values-ldpi             2.7” 240x320 ldpi

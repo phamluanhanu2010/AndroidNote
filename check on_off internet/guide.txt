@@ -1,0 +1,12 @@
+// Start Check internet
+    private static void initOnCheckInternet() {
+        Common.showLog("initOnCheckInternet");
+        //start check internet
+        NetworkConnectivity.sharedNetworkConnectivity().configure(mActivity);
+        NetworkConnectivity.sharedNetworkConnectivity().addNetworkMonitorListener(networkMonitorListener);
+        NetworkConnectivity.sharedNetworkConnectivity().startNetworkMonitor();
+        //end check internet
+    }
+// Start Check internet
+
+implements NetworkMonitorListener and override methods

@@ -1,0 +1,164 @@
+----------------Gọi---------------
+GoogleAPAsyncTask googleAPAsyncTask = new GoogleAPAsyncTask(details.productId,details.purchaseToken,packageName);
+            googleAPAsyncTask.execute();
+			------------------------
+-----------------Khai báo------------------
+
+//-------------------------------------------------------------------------------------------------------------
+    // TEST OIT
+    public String executeHttpPost(String url,
+                                  HashMap<String, String> postParameters) throws UnsupportedEncodingException {
+        // TODO Auto-generated method stub
+        HttpPost request = null;
+        String results = "";
+        HttpClient client = new DefaultHttpClient();
+        InputStream in = null;
+        BufferedReader reader = null;
+        try {
+            request = new HttpPost(url);
+
+            HttpParams httpParams = client.getParams();
+            HttpConnectionParams.setConnectionTimeout(httpParams, 30000); // http.connection.timeout
+            HttpConnectionParams.setSoTimeout(httpParams, 30000); // http.socket.timeout
+            request.setParams(httpParams);
+            Log.i("PARAM", "URL: " + url);
+            if (postParameters != null && postParameters.isEmpty() == false) {
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(postParameters.size());
+                for (String ke : postParameters.keySet()) {
+                    nameValuePairs.add(new BasicNameValuePair(ke, postParameters.get(ke)));
+                    Log.i("PARAM", ke + " --:" + postParameters.get(ke));
+                }
+
+
+
+                /*String k, v;
+                Iterator<String> itKeys = postParameters.keySet().iterator();
+                while (itKeys.hasNext()) {
+                    k = itKeys.next();
+                    v = postParameters.get(k);
+                    nameValuePairs.add(new BasicNameValuePair(k, v));
+                    Log.i("PARAM", k + " --: " + v);
+                }*/
+                UrlEncodedFormEntity urlEntity = new UrlEncodedFormEntity(nameValuePairs, "UTF-8");
+                request.setEntity(urlEntity);
+                request.setHeader("accept", "application/json");
+                request.setHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            }
+            HttpResponse response = client.execute(request);
+            HttpEntity entity = response.getEntity();
+            int statusCode = response.getStatusLine().getStatusCode();
+            //Utils.showLog(TAG, "statusCode----:" + statusCode);
+            switch (statusCode) {
+                case HttpURLConnection.HTTP_OK:
+
+                    in = (InputStream) entity.getContent();
+                    //Header contentEncoding = Response.getFirstHeader("Content-Encoding");
+                    /*if (contentEncoding != null && contentEncoding.getValue().equalsIgnoreCase("gzip")) {
+                        in = new GZIPInputStream(in);
+                    }*/
+                    reader = new BufferedReader(new InputStreamReader(in));
+                    StringBuilder str = new StringBuilder();
+                    String line = "";
+                    while ((line = reader.readLine()) != null) {
+                        str.append(line + "\n");
+                    }
+
+                    results = str.toString();
+                    return results;
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+
+    private class GoogleAPAsyncTask extends AsyncTask<String, Void, JSONObject> {
+        private String product_id;
+        private String purchase_token;
+        private String package_name;
+
+        public GoogleAPAsyncTask(String product_id, String purchase_token,
+                                 String package_name) {
+            this.product_id = product_id;
+            this.purchase_token = purchase_token;
+            this.package_name = package_name;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Utils.showProgressDialog(mContext, getString(R.string.tt_processing));
+            //countReconnect++;
+        }
+
+        @Override
+        protected JSONObject doInBackground(String... params) {
+            HashMap<String, String> input = new HashMap<>();
+            input.put("product_id", product_id);
+            input.put("purchase_token", purchase_token);
+            input.put("package_name", package_name);
+            JSONObject json = null;
+            try {
+                String strResult = executeHttpPost("http://192.168.28.36:8080/iot/google/iapnone", input);
+                if (!strResult.equals("")) {
+
+                    json = new JSONObject(strResult);
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+//            JSONObject json = BaseHttpClient.baseHttpClientPost(mContext, Config.URL_PURCHASE_IAP_JSON, input);
+            return json;
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject s) {
+            super.onPostExecute(s);
+
+            JSONObject jo = s;
+            if (jo != null) {
+                try {
+                    int status = jo.has("error") == false ? 0 : jo.getInt("error");
+                    String message = jo.has("message") == false ? "" : jo.getString("message");
+                    if (status == 200) {
+                        //Utils.showToastLong(mContext, "Mua gói cước thành công");
+
+//                        finish();
+                    } else {
+                        Log.d("error: ", message);
+                        //Utils.showToastLong(mContext, message);
+//                        Handler mHandler = new Handler();
+//                        mHandler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                if(countReconnect <=3) {
+//                                    new GoogleAPAsyncTask(product_id, purchase_token,package_name).execute();
+//                                }
+//                            }
+//                        },5000);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+            bp.consumePurchase(product_id);
+            // Utils.dismissProgressDialog();
+        }
+    }
+    // TEST OIT
+    //---------------------------------------------------------------------------------------------------------------
+	------------------------------------------------------------End khai báo------------------
+	
+	---------------------Thêm vào build.grade-------------
+	// TEST IOT
+    useLibrary 'org.apache.http.legacy'
+    //TEST IOT
+	--------------------------

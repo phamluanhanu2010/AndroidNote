@@ -1,0 +1,85 @@
+------------------------------Manifest----------------------------------------------
+<!-- [START GCM] -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.strategy.intecom.vtc.vtcitcsharing" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.RegistrationService"
+            android:exported="false"></service>
+
+        <service
+            android:name=".service.VtcInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
+
+        <service
+            android:name=".service.GcmListenerServices"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <!-- [END GCM] -->
+---------------------------------------------------------------------------------------------------------------
+--------------------------------------------Start Service-------------------------------------------------------------------
+Intent intentService = new Intent(mContext, RegistrationService.class);
+
+        if (!AppBase.checkPlayServices(mContext)) {
+            mContext.stopService(intentService);
+        }
+        mContext.startService(intentService);
+---------------------------------------------------------------------------------------------------------------
+------------------------------------checkPlayServices-------------------------------------------------------------------------
+public static boolean checkPlayServices(final Context context) {
+        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
+        int resultCode = apiAvailability.isGooglePlayServicesAvailable(context);
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (apiAvailability.isUserResolvableError(resultCode)) {
+                //apiAvailability.getErrorDialog(context, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                AppBase.showLog("checkPlayServices" + "resultCode" + String.valueOf(resultCode));
+            } else {
+                //AppCore.showLog(TAG, "This device is not supported.");
+            }
+            return false;
+        }
+        return true;
+    }
+------------------------------------------------------------------------------------------------
+-----------------------------------------build.grade-------------------------------------------------------
+//Thu vi?n GCM
+    compile 'com.google.android.gms:play-services:9.2.0'
+------------------------------------------------------------------------------------------------
+----------------------------------------Hứng bundle trả về trong hàm onCreate--------------------------------------------------------
+ // get bundle
+        if (bundle == null && getIntent() != null) {
+            bundle = getIntent().getExtras();
+        }
+        if (bundle != null) {
+            if (bundle.containsKey("type")) {
+                int type = bundle.getInt("type");
+                String id_order = bundle.getString("id_order");
+                String message = bundle.getString("message");
+                AppBase.showLog("type:" + type);
+                AppBase.showLog("message:" + message);
+            }
+        }
+----------------------------------------------------------------------------------------------------------------------

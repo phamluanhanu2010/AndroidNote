@@ -1,0 +1,41 @@
+
+-----------------------@drawable/splash---------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/colorPrimary"/>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/icon"/>
+    </item>
+</layer-list>
+------------------------@style/SplashThem--------------------------------------
+<resources>
+  <style name="SplashTheme" parent="AppTheme">
+    <item name="android:windowBackground">@drawable/splash</item>
+  </style>
+</resources>
+
+------------------------Android menifest--------------------------------------
+<activity android:name=".activities.MainActivity"
+  android:theme="@style/SplashTheme">
+  <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+  </intent-filter>
+</activity>
+
+----------------------Main activity.----------------------------------------
+public class MainActivity extends AppCompatActivity {
+   
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    // Make sure this is before calling super.onCreate
+    setTheme(R.style.AppTheme);
+    super.onCreate(savedInstanceState);
+  }
+  
+}
+
+--------------------------------------------------------------
